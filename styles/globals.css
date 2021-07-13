@@ -1,0 +1,23 @@
+html,
+body {
+    background-image: url('https://img.ibxk.com.br/2020/05/12/12093346772164.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: 0px 74px ;
+
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

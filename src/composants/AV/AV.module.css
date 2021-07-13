@@ -1,0 +1,26 @@
+.container {
+  padding-top: 100px;
+  margin-right: 100px;
+  padding: 0 0.5rem;
+  margin-right: 100px;
+  display: flex;
+  flex-direction:column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.AV {
+  color: #ff0505;
+  padding-top: 100px;
+  background-color: #0000005d;
+}
+.AV2 {
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  border-bottom: 1px solid #cf0303;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  text-align: center;
+}

@@ -1,0 +1,106 @@
+.container {
+    padding-top: 100px;
+    margin-right: 100px;
+    padding: 0 0.5rem;
+    margin-right: 100px;
+    display: flex;
+    flex-direction:column;
+  }
+.chimereContainer {
+    color: #ff0505;
+    padding-top: 100px;
+    background-color: #0000005d;
+}
+.chimere { 
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.elemFireContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemIceContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemWindContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemEarthContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemLightningContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemWaterContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemLightContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  .elemDarkContainer {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border-bottom: 1px solid #cf0303;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
