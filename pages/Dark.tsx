@@ -6,26 +6,37 @@ import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 import {AV} from '../src/composants/AV/AV'
-
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
-    var unitesURDark=[{
-        name:'Chuchote', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Chuchote.png'},{
-        name:'Duane', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Duane.png'},{
-        name:'Garvall', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Garvall.png'},{
-        name:'Helena', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Helena.png'},{
-        name:'Kain', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Kain.png'},{
-        name:'Gold Stern', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Stern Chevalier Déchu.png'},{ 
-        name:'Stern Leonis', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Stern Leonis.png'},{
-        name:'Vinera Fenne', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Vinera Fenne.png'},{
-        name:'Xiza', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Xiza.png'}
-        ]
-        var unitesMRDark=[{
-          name:'Gaffgarion', element:'dark', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Gaffgarion.png'},{
-          name:'Rairyuu', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Rairyuu.png'},{
-          name:'Shadowlynx', element:'dark', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Shadowlynx.png'},{
-          name:'Thytas', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Thytas.png'}
-        ]
+
+    const [unitesdarkUR, setUnitesdarkUR] = useState([]);
+    useEffect(() =>{
+        test()
+    }, [])
+
+    const [unitesdarkMR, setUnitesdarkMR] = useState([]);
+    useEffect(() =>{
+        test2()
+    }, [])
+    // var unitesURDark=[{
+    //     name:'Chuchote', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Chuchote.png'},{
+    //     name:'Duane', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Duane.png'},{
+    //     name:'Garvall', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Garvall.png'},{
+    //     name:'Helena', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Helena.png'},{
+    //     name:'Kain', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Kain.png'},{
+    //     name:'Gold Stern', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Stern Chevalier Déchu.png'},{ 
+    //     name:'Stern Leonis', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Stern Leonis.png'},{
+    //     name:'Vinera Fenne', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Vinera Fenne.png'},{
+    //     name:'Xiza', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/Xiza.png'}
+    //     ]
+    //     var unitesMRDark=[{
+    //       name:'Gaffgarion', element:'dark', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Gaffgarion.png'},{
+    //       name:'Rairyuu', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Rairyuu.png'},{
+    //       name:'Shadowlynx', element:'dark', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Shadowlynx.png'},{
+    //       name:'Thytas', element:'dark', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Thytas.png'}
+    //     ]
         var unitesSRDark=[{
           name:'Lillyla', element:'dark', sniv:'/niv:', niv:99, image:'/images/Unite/SR/Lillyla.png'}
         ]
@@ -63,6 +74,15 @@ export default function Home() {
             name:'Béhémoth', elem:'dark', image:'/images/Chimère/Béhémoth.png'},{
             name:'Lune de sang', elem:'dark', image:'/images/Chimère/Lune de sang.png'}
             ]
+
+            const test = async () => {
+                let response = await axios.get('http://localhost:8080/api/Unites/dark/UR');
+                setUnitesdarkUR(response.data);
+            }
+            const test2 = async () => {
+                let response = await axios.get('http://localhost:8080/api/Unites/dark/MR');
+                setUnitesdarkMR(response.data);
+            }
     
       return (
 
@@ -82,7 +102,7 @@ export default function Home() {
             <h5>Unités UR</h5>
                 
                 <div className={styles.elemDarkContainer}>
-                {unitesURDark.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {unitesdarkUR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision UR</h5>
                 <div className={styles.AV2}>
@@ -95,7 +115,7 @@ export default function Home() {
             <h4>Dark MR</h4>
             <h5>Unités MR</h5>
                 <div className={styles.elemDarkContainer}>
-                {unitesMRDark.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {unitesdarkMR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision MR</h5>
                 <div className={styles.AV2}>

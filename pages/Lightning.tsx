@@ -6,27 +6,42 @@ import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 import {AV} from '../src/composants/AV/AV'
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
-    var unitesURLightning=[{
-        name:'9S', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/9S.png'},{
-        name:'Frederika', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/Frederika.png'},{
-        name:'NivLu', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/NivLu.png'},{
-        name:'Orlandeau', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/Orlandeau.png'},{
-        name:'Skahal', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/Skahal.png'}
-      ]
-      var unitesMRLightning=[{
-        name:'Alym', element:'lightning', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Alym.png'},{
-        name:'Marie-luke', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Marie-luke.png'},{
-        name:'Owe', element:'lightning', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Owe.png'},{
-        name:'Raviesse', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Raviesse.png'},{
-        name:'Saliah', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Saliah.png'},{
-        name:'Schuzelt', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Schuzelt.png'},{
-        name:'Sylma', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Sylma.png'}
-      ]
+
+    const [uniteslightningUR, setUniteslightningUR] = useState([]);
+    useEffect(() =>{
+        test()
+    }, [])
+
+    const [uniteslightningMR, setUniteslightningMR] = useState([]);
+    useEffect(() =>{
+        test2()
+    }, [])
+    // var unitesURLightning=[{
+    //     name:'9S', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/9S.png'},{
+    //     name:'Frederika', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/Frederika.png'},{
+    //     name:'NivLu', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/NivLu.png'},{
+    //     name:'Orlandeau', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/Orlandeau.png'},{
+    //     name:'Skahal', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/Skahal.png'}
+    //   ]
+
+    //   var unitesMRLightning=[{
+    //     name:'Alym', element:'lightning', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Alym.png'},{
+    //     name:'Marie-luke', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Marie-luke.png'},{
+    //     name:'Owe', element:'lightning', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Owe.png'},{
+    //     name:'Raviesse', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Raviesse.png'},{
+    //     name:'Saliah', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Saliah.png'},{
+    //     name:'Schuzelt', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Schuzelt.png'},{
+    //     name:'Sylma', element:'lightning', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Sylma.png'}
+    //   ]
+
       var unitesSRLightning=[{
         name:'Vadim', element:'lightning', sniv:'/niv:', niv:99, image:'/images/Unite/SR/Vadim.png'}
       ]
+
       var unitesRLightning=[{
         name:'Learte', element:'lightning', sniv:'/niv:', niv:99, image:'/images/Unite/R/Learte.png'}
       ]
@@ -61,6 +76,16 @@ export default function Home() {
         name:'Ogre', elem:'lightning', image:'/images/Chimère/Ogre.png'}
         ]
 
+        const test = async () => {
+            let response = await axios.get('http://localhost:8080/api/Unites/lightning/UR');
+            setUniteslightningUR(response.data);
+        }
+        
+        const test2 = async () => {
+            let response = await axios.get('http://localhost:8080/api/Unites/lightning/MR');
+            setUniteslightningMR(response.data);
+        }
+
   
       return (
 
@@ -80,7 +105,7 @@ export default function Home() {
             <h5>Unités UR</h5>
                 
                 <div className={styles.elemLightningContainer}>
-                {unitesURLightning.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {uniteslightningUR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision UR</h5>
                 <div className={styles.AV2}>
@@ -93,7 +118,7 @@ export default function Home() {
             <h4>Lightning MR</h4>
             <h5>Unités MR</h5>
                 <div className={styles.elemLightningContainer}>
-                {unitesMRLightning.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {uniteslightningMR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision MR</h5>
                 <div className={styles.AV2}>

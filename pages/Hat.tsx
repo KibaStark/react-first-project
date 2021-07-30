@@ -18,21 +18,25 @@ var HatUR=[{
     name:'Lune kaléidoscopique', image:'/images/Equipement/Armor/Hat/Lune kaléidoscopique.png'},{
     name:'Lunettes danalyse', image:'/images/Equipement/Armor/Hat/Lunettes danalyse.png'
 }]
+
 var HatMR=[{
     name:'Chapeau de sage', image:'/images/Equipement/Armor/Hat/Chapeau de sage.png'},{
     name:'Masque de loup', image:'/images/Equipement/Armor/Hat/Masque de loup.png'}
 ]
+
 var HatSR=[{
     name:'Bandana de Rubeus', image:'/images/Equipement/Armor/Hat/Bandana de Rubeus.png'},{
     name:'Bonnet de dévotion', image:'/images/Equipement/Armor/Hat/Bonnet de dévotion.png'},{
     name:'Bonnet temporel', image:'/images/Equipement/Armor/Hat/Bonnet temporel.png'},{
     name:'Diadème', image:'/images/Equipement/Armor/Hat/Diadème.png'
 }]
+
 var HatR=[{
     name:'Bandana de shinobi', image:'/images/Equipement/Armor/Hat/Bandana de shinobi.png'},{
     name:'Chapeau de magicien', image:'/images/Equipement/Armor/Hat/Chapeau de magicien.png'},{
     name:'Chapeau de sorcier', image:'/images/Equipement/Armor/Hat/Chapeau de sorcier.png'
 }]
+
 var HatN=[{
     name:'Chapeau de cuir', image:'/images/Equipement/Armor/Hat/Chapeau de cuir.png'
 }]
@@ -47,7 +51,6 @@ var HatN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -78,11 +81,7 @@ var HatN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Hat</h3>
             <h4>UR</h4>
@@ -108,7 +107,6 @@ var HatN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

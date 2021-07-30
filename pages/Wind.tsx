@@ -6,27 +6,42 @@ import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 import {AV} from '../src/composants/AV/AV'
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
-  var unitesURWind=[{
-    name:'2B', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/2B.png'},{
-    name:'Ayaka', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Ayaka.png'},{
-    name:'Corwell', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Corwell.png'},{
-    name:'Howlett', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Howlett.png'},{
-    name:'Lillyla Halloween', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Lillyla Halloween.png'},{
-    name:'Lucia', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Lucia.png'},{
-    name:'Oldoa', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Oldoa.png'},{
-    name:'Yelma', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Yelma.png'}
-  ]
-  var unitesMRWind=[{
-    name:'Cadia', element:'wind', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Cadia.png'},{
-    name:'Dario Hourne', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Dario Hourne.png'},{
-    name:'Helena Leonis', element:'wind', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Helena Leonis.png'},{
-    name:'Loreila', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Loreila.png'}
-  ]
+    const [uniteswindUR, setUniteswindUR] = useState([]);
+    useEffect(() =>{
+        test()
+    }, [])
+
+    const [uniteswindMR, setUniteswindMR] = useState([]);
+    useEffect(() =>{
+        test2()
+    }, [])
+
+  // var unitesURWind=[{
+  //   name:'2B', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/2B.png'},{
+  //   name:'Ayaka', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Ayaka.png'},{
+  //   name:'Corwell', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Corwell.png'},{
+  //   name:'Howlett', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Howlett.png'},{
+  //   name:'Lillyla Halloween', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Lillyla Halloween.png'},{
+  //   name:'Lucia', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Lucia.png'},{
+  //   name:'Oldoa', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Oldoa.png'},{
+  //   name:'Yelma', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/Yelma.png'}
+  // ]
+  
+  // var unitesMRWind=[{
+  //   name:'Cadia', element:'wind', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Cadia.png'},{
+  //   name:'Dario Hourne', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Dario Hourne.png'},{
+  //   name:'Helena Leonis', element:'wind', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Helena Leonis.png'},{
+  //   name:'Loreila', element:'wind', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Loreila.png'}
+  // ]
+
   var unitesSRWind=[{
     name:'Sosha', element:'wind', sniv:'/niv:', niv:99, image:'/images/Unite/SR/Sosha.png'}
   ]
+
   var unitesRWind=[{
     name:'Mia', element:'wind', sniv:'/niv:', niv:99, image:'/images/Unite/R/Mia.png'}
   ]
@@ -51,7 +66,6 @@ export default function Home() {
       var chimereURWind=[{
         name:'Tétra-Sylphides', elem:'wind', image:'/images/Chimère/Tétra-Sylphides.png'},{
         name:'Typhon', elem:'wind', image:'/images/Chimère/Typhon.png'}
-          
         ]
       
       var chimereMRWind=[{
@@ -62,6 +76,16 @@ export default function Home() {
       var chimereSRWind=[{
         name:'Zu', elem:'wind', image:'/images/Chimère/Zu.png'}
         ]
+
+        const test = async () => {
+          let response = await axios.get('http://localhost:8080/api/Unites/wind/UR');
+          setUniteswindUR(response.data);
+      }
+      
+      const test2 = async () => {
+          let response = await axios.get('http://localhost:8080/api/Unites/wind/MR');
+          setUniteswindMR(response.data);
+      }
 
       return (
 
@@ -81,7 +105,7 @@ export default function Home() {
             <h5>Unités UR</h5>
                 
                 <div className={styles.elemWindContainer}>
-                {unitesURWind.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {uniteswindUR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision UR</h5>
                 <div className={styles.AV2}>
@@ -94,7 +118,7 @@ export default function Home() {
             <h4>Wind MR</h4>
             <h5>Unités MR</h5>
                 <div className={styles.elemWindContainer}>
-                {unitesMRWind.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {uniteswindMR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision MR</h5>
                 <div className={styles.AV2}>

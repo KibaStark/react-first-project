@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -15,6 +14,7 @@ export default function Home() {
 var SpearUR=[{
     name:'Lance zéphyr', image:'/images/Equipement/Arme/Spear/Lance zéphyr.png'
 }]
+
 var SpearMR=[{
     name:'Arrogance cruelle', image:'/images/Equipement/Arme/Spear/Arrogance cruelle.png'},{
     name:'Lance cornodragon', image:'/images/Equipement/Arme/Spear/Lance cornodragon.png'},{
@@ -23,14 +23,16 @@ var SpearMR=[{
     name:'Lance tueuse de dragons', image:'/images/Equipement/Arme/Spear/Lance tueuse de dragons.png'},{
     name:'Naginata antique', image:'/images/Equipement/Arme/Spear/Naginata antique.png'},{
     name:'Rafalance', image:'/images/Equipement/Arme/Spear/Rafalance.png'}
-    
 ]
+
 var SpearSR=[{
     name:'Lance de mithril', image:'/images/Equipement/Arme/Spear/Lance de mithril.png'
 }]
+
 var SpearR=[{
     name:'Partisan', image:'/images/Equipement/Arme/Spear/Partisan.png'
 }]
+
 var SpearN=[{
     name:'Javelot', image:'/images/Equipement/Arme/Spear/Javelot.png'
 }]
@@ -45,7 +47,6 @@ var SpearN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -76,11 +77,7 @@ var SpearN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Spear</h3>
             <h4>UR</h4>
@@ -106,7 +103,6 @@ var SpearN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

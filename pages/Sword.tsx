@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -16,6 +15,7 @@ var SwordUR=[{
     name:'épée de service de la garde royale de Lesalia', image:'/images/Equipement/Arme/Sword/épée de service de la garde royale de Lesalia.png'},{
     name:'Excalibur', image:'/images/Equipement/Arme/Sword/Excalibur.png'
 }]
+
 var SwordMR=[{
     name:'Araignée dansante', image:'/images/Equipement/Arme/Sword/Araignée dansante.png'},{
     name:'Cryolame', image:'/images/Equipement/Arme/Sword/Cryolame.png'},{
@@ -36,15 +36,17 @@ var SwordMR=[{
     name:'Réplique de Coeur-de-lion', image:'/images/Equipement/Arme/Sword/Réplique de Coeur-de-lion.png'},{
     name:'Servante insignifiante', image:'/images/Equipement/Arme/Sword/Lame guide.png'},{
     name:'Vermillon', image:'/images/Equipement/Arme/Sword/Vermillon.png'}
-    
 ]
+
 var SwordSR=[{
     name:'Brise métal', image:'/images/Equipement/Arme/Sword/Brise métal.png'},{
     name:'épée en mithril', image:'/images/Equipement/Arme/Sword/épée en mithril.png'
 }]
+
 var SwordR=[{
     name:'épée longue', image:'/images/Equipement/Arme/Sword/épée longue.png'
 }]
+
 var SwordN=[{
     name:'épée large', image:'/images/Equipement/Arme/Sword/épée large.png'
 }]
@@ -59,7 +61,6 @@ var SwordN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -90,11 +91,7 @@ var SwordN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Sword</h3>
             <h4>UR</h4>
@@ -120,7 +117,6 @@ var SwordN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

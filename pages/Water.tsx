@@ -6,26 +6,42 @@ import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 import {AV} from '../src/composants/AV/AV'
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
-    var unitesURWater=[{
-        name:'Graziella', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Graziella.png'},{
-        name:'Ildyra', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Ildyra.png'},{
-        name:'Miranda', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Miranda.png'},{
-        name:'Moore', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Moore.png'},{
-        name:'Ramada Hiver', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Ramada Hiver.png'},{
-        name:'Tidus', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Tidus.png'},{
-        name:'Vinera Hiver', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Vinera Hiver.png'}
-        ]
-      var unitesMRWater=[{
-        name:'Creysse', element:'water', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Creysse.png'},{
-        name:'Ramada', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Ramada.png'},{
-        name:'Tyrrell', element:'water', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Tyrrell.png'}
-      ]
+
+    const [uniteswaterUR, setUniteswaterUR] = useState([]);
+    useEffect(() =>{
+        test()
+    }, [])
+
+    const [uniteswaterMR, setUniteswaterMR] = useState([]);
+    useEffect(() =>{
+        test2()
+    }, [])
+
+    // var unitesURWater=[{
+    //     name:'Graziella', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Graziella.png'},{
+    //     name:'Ildyra', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Ildyra.png'},{
+    //     name:'Miranda', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Miranda.png'},{
+    //     name:'Moore', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Moore.png'},{
+    //     name:'Ramada Hiver', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Ramada Hiver.png'},{
+    //     name:'Tidus', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Tidus.png'},{
+    //     name:'Vinera Hiver', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/Vinera Hiver.png'}
+    //     ]
+
+    //   var unitesMRWater=[{
+    //     name:'Creysse', element:'water', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Creysse.png'},{
+    //     name:'Ramada', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Ramada.png'},{
+    //     name:'Tyrrell', element:'water', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Tyrrell.png'}
+    //   ]
+
       var unitesSRWater=[{
         name:'Sévéro', element:'water', sniv:'/niv:', niv:99, image:'/images/Unite/SR/Sévéro.png'},{
         name:'Yuni', element:'water', sniv:'/niv:', niv:0, image:'/images/Unite/SR/Yuni.png'}
       ]
+
       var unitesNWater=[{
         name:'Zazan', element:'water', sniv:'/niv:', niv:99, image:'/images/Unite/N/Zazan.png'}
       ]
@@ -56,7 +72,16 @@ export default function Home() {
         name:'Ensorceleur', elem:'water', image:'/images/Chimère/Ensorceleur.png'}
         ]
 
-        
+        const test = async () => {
+            let response = await axios.get('http://localhost:8080/api/Unites/water/UR');
+            setUniteswaterUR(response.data);
+        }
+
+        const test2 = async () => {
+            let response = await axios.get('http://localhost:8080/api/Unites/water/MR');
+            setUniteswaterMR(response.data);
+        }
+
       return (
 
         <div className={styles.container}>
@@ -75,7 +100,7 @@ export default function Home() {
             <h5>Unités UR</h5>
                 
                 <div className={styles.elemWaterContainer}>
-                {unitesURWater.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {uniteswaterUR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision UR</h5>
                 <div className={styles.AV2}>
@@ -88,7 +113,7 @@ export default function Home() {
             <h4>Water MR</h4>
             <h5>Unités MR</h5>
                 <div className={styles.elemWaterContainer}>
-                {unitesMRWater.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {uniteswaterMR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision MR</h5>
                 <div className={styles.AV2}>

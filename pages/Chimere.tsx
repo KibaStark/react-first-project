@@ -5,14 +5,12 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Element} from '../src/composants/Unite/Element'
 
-
 export default function Home() {
 
   var chimereURFire=[{
     name:'Ifrit', elem:'fire', image:'/images/Chimère/Ifrit.png'},{
     name:'Phénix', elem:'fire', image:'/images/Chimère/Phénix.png'},{
     name:'Sentinelle', elem:'fire', image:'/images/Chimère/Sentinelle.png'}
-    
         ]  
 
     var chimereMRFire=[{
@@ -27,7 +25,7 @@ export default function Home() {
     var chimereURIce=[{
       name:'Fenrir', elem:'ice', image:'/images/Chimère/Fenrir.png'},{
       name:'Shiva', elem:'ice', image:'/images/Chimère/Shiva.png'}
-      ]
+        ]
 
     var chimereMRIce=[{
         name:'Glacial', elem:'ice', image:'/images/Chimère/Glacial.png'},{
@@ -42,33 +40,34 @@ export default function Home() {
       name:'Tétra-Sylphides', elem:'wind', image:'/images/Chimère/Tétra-Sylphides.png'},{
       name:'Typhon', elem:'wind', image:'/images/Chimère/Typhon.png'}
         
-      ]
+        ]
     
     var chimereMRWind=[{
       name:'Chocobo', elem:'wind', image:'/images/Chimère/Chocobo.png'},{
       name:'Morbol', elem:'wind', image:'/images/Chimère/Morbol.png'}
-      ]
+        ]
       
     var chimereSRWind=[{
       name:'Zu', elem:'wind', image:'/images/Chimère/Zu.png'}
-      ]
+        ]
 
     var chimereUREarth=[{
       name:'Golem', elem:'earth', image:'/images/Chimère/Golem.png'},{
       name:'Titan', elem:'earth', image:'/images/Chimère/Titan.png'}
-      ]
+        ]
+
     var chimereMREarth=[{
     name:'Otyugh', elem:'earth', image:'/images/Chimère/Otyugh.png'}
-    ]
+        ]
     
     var chimereSREarth=[{
       name:'Pampa', elem:'earth', image:'/images/Chimère/Pampa.png'}
-      ]
+        ]
 
     var chimereURLightning=[{
       name:'Egéon', elem:'lightning', image:'/images/Chimère/Egéon.png'},{
       name:'Ramuh', elem:'lightning', image:'/images/Chimère/Ramuh.png'}
-      ]
+        ]
 
     var chimereMRLightning=[{
         name:'Coeurl', elem:'lightning', image:'/images/Chimère/Freezus.png'},{
@@ -82,7 +81,7 @@ export default function Home() {
     var chimereURWater=[{
       name:'Léviathan', elem:'water', image:'/images/Chimère/Léviathan.png'},{
       name:'Sirène', elem:'water', image:'/images/Chimère/Sirène.png'}
-      ]
+        ]
 
     var chimereMRWater=[{
         name:'Ensorceleur', elem:'water', image:'/images/Chimère/Ensorceleur.png'}
@@ -93,21 +92,19 @@ export default function Home() {
       name:'Dragon à deux têtes', elem:'light', image:'/images/Chimère/Dragon à deux têtes.png'},{
       name:'Freezus', elem:'light', image:'/images/Chimère/Freezus.png'},{
       name:'Odin', elem:'light', image:'/images/Chimère/Odin.png'}
-      ]
+        ]
     
     var chimereMRLight=[{
       name:'Chocobo rouge', elem:'light', image:'/images/Chimère/Chocobo rouge.png'},{
       name:'Géant de fer', elem:'light', image:'/images/Chimère/Géant de fer.png'}
-      ]
+        ]
 
-    
     var chimereURDark=[{
       name:'Diabolos', elem:'dark', image:'/images/Chimère/Diabolos.png'},{
       name:'Mur démoniaque', elem:'dark', image:'/images/Chimère/Mur démoniaque.png'},{
       name:'Oméga', elem:'dark', image:'/images/Chimère/Oméga.png'}
-      ]
-          
-          
+        ]
+            
     var chimereMRDark=[{
         name:'Béhémoth', elem:'dark', image:'/images/Chimère/Béhémoth.png'},{
         name:'Lune de sang', elem:'dark', image:'/images/Chimère/Lune de sang.png'}
@@ -125,7 +122,6 @@ export default function Home() {
       <SideBar/>
 
       <div className={styles.chimereContainer}>
-
 
                 <h3>Chimère UR</h3>
                 <div className={styles.chimere}>
@@ -163,7 +159,6 @@ export default function Home() {
                     </div>
                 </div>
                 
-
                 <h3>Chimère MR</h3>
                 <div className={styles.chimere}>
                 <div className={styles.elemFireContainer}>
@@ -224,12 +219,9 @@ export default function Home() {
                     {chimereSRLightning.map((chimere, index) => (<Chimere name={chimere.name} element={chimere.elem} key={index} image={chimere.image}/>))}
                     </div>
 
-
                 </div>
       
       </div>
-      
-      
       
       <footer className={styles.footer}>
 

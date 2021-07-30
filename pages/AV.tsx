@@ -5,7 +5,6 @@ import {AV} from '../src/composants/AV/AV'
 import {Element} from '../src/composants/Unite/Element'
 import styles from '../src/composants/AV/AV.module.css'
 
-
 export default function Home() {
 
     var atvURFire=[{
@@ -18,6 +17,7 @@ export default function Home() {
       name:'Sentinelle', elem:'fire', image:'/images/AV/Sentinelle.png'},{
       name:'Un simple brin dherbe', elem:'fire', image:'/images/AV/Un simple brin dherbe.png'}
     ]
+
     var atvMRFire=[{
       name:'Marilith', elem:'fire', image:'/images/AV/MR/Marilith.png'},{
       name:'Mobius de lespoir et des illusions', elem:'fire', image:'/images/AV/MR/Mobius de lespoir et des illusions.png'},{
@@ -160,6 +160,8 @@ export default function Home() {
 
       <Header/>
       <SideBar/>
+
+      
       <div className={styles.AV}>
         <h4>Atout Vision UR</h4>
         <Element elem='fire' name='fire'></Element>

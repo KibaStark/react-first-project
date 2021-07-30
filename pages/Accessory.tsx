@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -55,6 +54,7 @@ var AccessoryUR=[{
     name:'Tristella', image:'/images/Equipement/Accessory/Tristella.png'},{
     name:'Tunique dElfe', image:'/images/Equipement/Accessory/Tunique dElfe.png'}
 ]
+
 var AccessoryMR=[{
     name:'Bras de la noirceur éternelle', image:'/images/Equipement/Accessory/Bras de la noirceur éternelle.png'},{
     name:'Diadème du soldat serpent', image:'/images/Equipement/Accessory/Diadème du soldat serpent.png'},{
@@ -66,18 +66,20 @@ var AccessoryMR=[{
     name:'Marquise', image:'/images/Equipement/Accessory/Marquise.png'},{
     name:'Pod 153', image:'/images/Equipement/Accessory/Pod 153.png'},{
     name:'Sortilège', image:'/images/Equipement/Accessory/Sortilège.png'}
-    
 ]
+
 var AccessorySR=[{
     name:'Anneau de fée', image:'/images/Equipement/Accessory/Anneau de fée.png'},{
     name:'Bottes du dragon', image:'/images/Equipement/Accessory/Bottes du dragon.png'},{
     name:'Cache-oeil de magilithe', image:'/images/Equipement/Accessory/Cache-oeil de magilithe.png'},{
     name:'Jolie capuche', image:'/images/Equipement/Accessory/Jolie capuche.png'
 }]
+
 var AccessoryR=[{
     name:'Bague de héros', image:'/images/Equipement/Accessory/Bague de héros.png'},{
     name:'Ruban raffiné', image:'/images/Equipement/Accessory/Ruban raffiné.png'
 }]
+
 var AccessoryN=[{
     name:'Anneau Rhinopierre', image:'/images/Equipement/Accessory/Anneau Rhinopierre.png'},{
     name:'Capuche ours', image:'/images/Equipement/Accessory/Capuche ours.png'
@@ -123,11 +125,7 @@ var AccessoryN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Accessory</h3>
             <h4>UR</h4>
@@ -153,7 +151,6 @@ var AccessoryN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

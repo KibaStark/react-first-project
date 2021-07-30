@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -15,14 +14,16 @@ export default function Home() {
 var NinjaBladeMR=[{
     name:'Katana de sasuke', image:'/images/Equipement/Arme/NinjaBlade/Katana de sasuke.png'},{
     name:'Serpe arrondie', image:'/images/Equipement/Arme/NinjaBlade/Serpe arrondie.png'}
-    
 ]
+
 var NinjaBladeSR=[{
     name:'Kadachi', image:'/images/Equipement/Arme/NinjaBlade/Kadachi.png'
 }]
+
 var NinjaBladeR=[{
     name:'Kunaï', image:'/images/Equipement/Arme/NinjaBlade/Kunaï.png'
 }]
+
 var NinjaBladeN=[{
     name:'Lame ninja', image:'/images/Equipement/Arme/NinjaBlade/Lame ninja.png'
 }]
@@ -37,7 +38,6 @@ var NinjaBladeN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -68,11 +68,7 @@ var NinjaBladeN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>NinjaBlade</h3>
 
@@ -94,7 +90,6 @@ var NinjaBladeN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

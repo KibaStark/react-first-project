@@ -1,52 +1,68 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import {Member} from '../src/composants/Member/Member'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
-
+import { Member, Props as MemberProps } from '../src/composants/Member/Member'
+import {UserUnite, Props as UserProps} from '../src/composants/UserProfile/UserUnite'
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
-    
+
     var MemberEloriachef=[{
-      name:'Demed', image:'/images/Membre/Demed.png'}
+      pseudo:'Demed', grade:'chef', image:'/images/Membre/Demed.png'}
     ]
 
     var MemberEloriaBrasDroit=[{
-      name:'Kiba', image:'/images/Membre/Kiba.png'},{
-      name:'Razmo', image:'/images/Membre/Razmo.jpg'},{
-      name:'Schlagen', image:'/images/Membre/Schlagen.jpg'},{
-      name:'Oscar', image:'/images/Membre/Oscar.png'},{
-      name:'Link', image:'/images/Membre/Link.jpg'},{
-      name:'Unknown', image:'/images/Membre/Unknown.jpg'}
+      pseudo:'Kiba', grade:'Bras droit', image:'/images/Membre/Kiba.png'},{
+      pseudo:'Razmo', grade:'Bras droit', image:'/images/Membre/Razmo.jpg'},{
+      pseudo:'Schlagen', grade:'Bras droit', image:'/images/Membre/Schlagen.jpg'},{
+      pseudo:'Oscar', grade:'Bras droit', image:'/images/Membre/Oscar.png'},{
+      pseudo:'Link', grade:'Bras droit', image:'/images/Membre/Link.jpg'},{
+      pseudo:'Unknown', grade:'Bras droit', image:'/images/Membre/Unknown.jpg'}
     ]
+
     var MemberEloriaCapitaine=[{
-      name:'typher', image:'/images/Membre/Typher.png'},{
-      name:'Zhak', image:'/images/Membre/Zhak.jpg'},{
-      name:'FarAlex', image:'/images/Membre/FarAlex.png'},{
-      name:'Perlin', image:'/images/Membre/Perlin.png'},{
-      name:'Flo408', image:'/images/Membre/Flo.png'},{
-      name:'Djinsung', image:'/images/Membre/Djinsung.png'}
+      pseudo:'typher', grade:'Capitaine', image:'/images/Membre/Typher.png'},{
+      pseudo:'Zhak', grade:'Capitaine', image:'/images/Membre/Zhak.jpg'},{
+      pseudo:'FarAlex', grade:'Capitaine', image:'/images/Membre/FarAlex.png'},{
+      pseudo:'Perlin', grade:'Capitaine', image:'/images/Membre/Perlin.png'},{
+      pseudo:'Flo408', grade:'Capitaine', image:'/images/Membre/Flo.png'},{
+      pseudo:'Djinsung', grade:'Capitaine', image:'/images/Membre/Djinsung.png'}
     ]
+
     var MemberEloria=[{
-      name:'Angenoir', image:'/images/unnamed.jpg'},{
-      name:'Samba93', image:'/images/unnamed.jpg'},{
-      name:'Wrath', image:'/images/unnamed.jpg'},{
-      name:'sethart', image:'/images/unnamed.jpg'},{
-      name:'SamZR', image:'/images/unnamed.jpg'},{
-      name:'Bahamut', image:'/images/unnamed.jpg'},{
-      name:'Pype', image:'/images/unnamed.jpg'},{
-      name:'Vexxy', image:'/images/unnamed.jpg'},{
-      name:'Tamouna22', image:'/images/unnamed.jpg'},{
-      name:'Miseru', image:'/images/unnamed.jpg'},{
-      name:'Grandcoeur', image:'/images/unnamed.jpg'},{
-      name:'Pikajon', image:'/images/unnamed.jpg'},{
-      name:'Lloyd', image:'/images/unnamed.jpg'},{
-      name:'Gina', image:'/images/unnamed.jpg'},{
-      name:'Garzeth', image:'/images/unnamed.jpg'},{
-      name:'Sherda', image:'/images/unnamed.jpg'},{
-      name:'Keille', image:'/images/unnamed.jpg'}
+      pseudo:'Angenoir', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Samba93', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Wrath', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'sethart', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'SamZR', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Bahamut', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Pype', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Vexxy', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Tamouna22', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Miseru', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Grandcoeur', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Pikajon', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Lloyd', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Gina', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Garzeth', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Sherda', grade:'Membre', image:'/images/unnamed.jpg'},{
+      pseudo:'Keille', grade:'Membre', image:'/images/unnamed.jpg'}
     ]
+    
+  const [users, setUsers] = useState<UserProps[]>([]);
+
+  const getUsers = async () => {
+    let response = await axios.get(`http://localhost:8080/api/getUser/brasDroit`);
+    setUsers(response.data);
+}
+useEffect(() =>{
+  getUsers();
+}, [])
+
   return (
+
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -56,29 +72,29 @@ export default function Home() {
 
       <Header/>
       <SideBar/>
-      
-
 
       <div className={styles.guildeEloriaContainer}>
         <h2>Eloria</h2>
         <h3>Chef</h3>
         <div className={styles.guildeEloriaChefContainer}>
-          {MemberEloriachef.map((member, index) => (<Member name={member.name} key={index} image={member.image}/>))}
+          {MemberEloriachef.map((member, index) => (<Member pseudo={member.pseudo} id={member.id} grade={member.grade} key={index} image={member.image}/>))}
         </div>
 
         <h3>Bras droit</h3>
         <div className={styles.guildeEloriaBrasDroitContainer}>
-          {MemberEloriaBrasDroit.map((member, index) => (<Member name={member.name} key={index} image={member.image}/>))}
+        {users.map((user:UserProps, index) => (<Member pseudo={user.pseudo} id={user.id} grade={user.grade} key={index} image={user.image}/>))}
+
+          {MemberEloriaBrasDroit.map((member, index) => (<Member pseudo={member.pseudo} id={member.id} grade={member.grade} key={index} image={member.image}/>))}
         </div>
 
         <h3>Capitaine</h3>
         <div className={styles.guildeEloriaCapitaineContainer}>
-          {MemberEloriaCapitaine.map((member, index) =>(<Member name={member.name} key={index} image={member.image}/>))}
+          {MemberEloriaCapitaine.map((member, index) =>(<Member pseudo={member.pseudo} id={member.id} grade={member.grade} key={index} image={member.image}/>))}
         </div>
         
         <h3>Membre</h3>
         <div className={styles.guildeEloriaMemberContainer}>
-          {MemberEloria.map((member, index) =>(<Member name={member.name} key={index} image={member.image}/>))}
+          {MemberEloria.map((member, index) =>(<Member pseudo={member.pseudo} id={member.id} grade={member.grade} key={index} image={member.image}/>))}
         </div>
       </div>
 

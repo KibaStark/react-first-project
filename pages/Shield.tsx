@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -15,6 +14,7 @@ export default function Home() {
 var RodUR=[{
     name:'Bouclier de Solidius', image:'/images/Equipement/Armor/Shield/Bouclier de Solidius.png'
 }]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -25,7 +25,6 @@ var RodUR=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -56,9 +55,6 @@ var RodUR=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
 
 
@@ -70,7 +66,6 @@ var RodUR=[{
 
             
         </div>
-      
       
       <footer className={styles.footer}>
 

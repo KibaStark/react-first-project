@@ -1,10 +1,11 @@
 html,
 body {
+  background-color: black;
     background-image: url('https://img.ibxk.com.br/2020/05/12/12093346772164.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size:contain;
-    background-position: 0px 74px ;
+    background-size:1100px;
+    background-position: 75px 74px;
 
   padding: 0;
   margin: 0;

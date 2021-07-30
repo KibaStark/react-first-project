@@ -4,7 +4,6 @@ import {Member} from '../src/composants/Member/Member'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 
-
 export default function Home() {
     
     var MemberEloriachef=[{
@@ -19,6 +18,7 @@ export default function Home() {
       name:'Link', image:'/images/Membre/Link.jpg'},{
       name:'Unknown', image:'/images/Membre/Unknown.jpg'}
     ]
+
     var MemberEloriaCapitaine=[{
       name:'typher', image:'/images/unnamed.jpg'},{
       name:'Zhak', image:'/images/unnamed.jpg'},{
@@ -27,6 +27,7 @@ export default function Home() {
       name:'Flo408', image:'/images/Membre/Flo.png'},{
       name:'Djinsung', image:'/images/Membre/Djinsung.png'}
     ]
+
     var MemberEloria=[{
       name:'Angenoir', image:'/images/unnamed.jpg'},{
       name:'Samba93', image:'/images/unnamed.jpg'},{
@@ -56,7 +57,6 @@ export default function Home() {
 
       <Header/>
       <SideBar/>
-
 
       <h2>Ivalice</h2>
       <Member name='Xya' image='/images/unnamed.jpg'></Member>

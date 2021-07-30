@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -16,14 +15,16 @@ var MaceMR=[{
     name:'Masse de la tendresse', image:'/images/Equipement/Arme/Mace/Masse de la tendresse.png'},{
     name:'Masse de platine', image:'/images/Equipement/Arme/Mace/Masse de platine.png'},{
     name:'Masse de soin', image:'/images/Equipement/Arme/Mace/Masse de soin.png'}
-    
 ]
+
 var MaceSR=[{
     name:'Masse en mithril', image:'/images/Equipement/Arme/Mace/Masse en mithril.png'
 }]
+
 var MaceR=[{
     name:'Masse en fer', image:'/images/Equipement/Arme/Mace/Masse en fer.png'
 }]
+
 var MaceN=[{
     name:'Masse en bronze', image:'/images/Equipement/Arme/Mace/Masse en bronze.png'
 }]
@@ -38,7 +39,6 @@ var MaceN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -69,11 +69,7 @@ var MaceN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Mace</h3>
 
@@ -95,7 +91,6 @@ var MaceN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

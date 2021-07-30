@@ -6,25 +6,36 @@ import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 import {AV} from '../src/composants/AV/AV'
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
+    const [unitesiceUR, setUnitesiceUR] = useState([]);
+    useEffect(() =>{
+        test()
+    }, [])
 
-    var unitesURIce=[{
-    name:'Agrias',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Agrias.png'},{
-    name:'Auron',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Auron.png'},{
-    name:'Fryevia',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Fryevia.png'},{
-    name:'Gilgamesh',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Gilgamesh.png'},{
-    name:'Laswell',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Laswell.png'},{
-    name:'Mediena',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Mediena.png'},{
-    name:'Rosa',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Rosa.png'},{
-    name:'Saliah Romantique',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Saliah Romantique.png'},{
-    name:'Viktora',  element:'ice', sniv:'/niv:', niv:0,  image:'/images/Unite/Viktora.png'}
-    ]
-    var unitesMRIce=[{
-    name:'Chel', element:'ice', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Chel.png'},{
-    name:'Khory Wezett', element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Khory Wezett.png'},{
-    name:'Nasha', element:'ice', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Nasha.png'}
-    ]
+    const [unitesiceMR, setUnitesiceMR] = useState([]);
+    useEffect(() =>{
+        test2()
+    }, [])
+
+    // var unitesURIce=[{
+    // name:'Agrias',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Agrias.png'},{
+    // name:'Auron',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Auron.png'},{
+    // name:'Fryevia',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Fryevia.png'},{
+    // name:'Gilgamesh',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Gilgamesh.png'},{
+    // name:'Laswell',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Laswell.png'},{
+    // name:'Mediena',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Mediena.png'},{
+    // name:'Rosa',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Rosa.png'},{
+    // name:'Saliah Romantique',  element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/Saliah Romantique.png'},{
+    // name:'Viktora',  element:'ice', sniv:'/niv:', niv:0,  image:'/images/Unite/Viktora.png'}
+    // ]
+    // var unitesMRIce=[{
+    // name:'Chel', element:'ice', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Chel.png'},{
+    // name:'Khory Wezett', element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Khory Wezett.png'},{
+    // name:'Nasha', element:'ice', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Nasha.png'}
+    // ]
     var unitesSRIce=[{
     name:'Serjes', element:'ice', sniv:'/niv:', niv:99, image:'/images/Unite/SR/Serjes.png'},{
     name:'Valaïde', element:'ice', sniv:'/niv:', niv:0, image:'/images/Unite/SR/Valaïde.png'}
@@ -60,6 +71,15 @@ var chimereMRIce=[{
     name:'Oeil flottant', elem:'ice', image:'/images/Chimère/Oeil flottant.png'}
     ]
 
+    const test = async () => {
+        let response = await axios.get('http://localhost:8080/api/Unites/ice/UR');
+        setUnitesiceUR(response.data);
+    }
+    const test2 = async () => {
+        let response = await axios.get('http://localhost:8080/api/Unites/ice/MR');
+        setUnitesiceMR(response.data);
+    }
+
 
 
       return (
@@ -80,7 +100,7 @@ var chimereMRIce=[{
             <h5>Unités UR</h5>
                 
                 <div className={styles.elemIceContainer}>
-                {unitesURIce.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {unitesiceUR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision UR</h5>
                 <div className={styles.AV2}>
@@ -93,7 +113,7 @@ var chimereMRIce=[{
             <h4>Ice MR</h4>
             <h5>Unités MR</h5>
                 <div className={styles.elemIceContainer}>
-                {unitesMRIce.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {unitesiceMR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision MR</h5>
                 <div className={styles.AV2}>

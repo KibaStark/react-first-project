@@ -6,23 +6,29 @@ import {Chimere} from '../src/composants/Chimere/Chimere'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 import {AV} from '../src/composants/AV/AV'
+import { useState, useEffect } from 'react'
+const axios = require('axios');
 
 export default function Home() {
-    var unitesUREarth=[{
-        name:'Aileen', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/Aileen.png'},{
-        name:'Kilphe', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/Kilphe.png'},{
-        name:'Kitone', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/Kitone.png'},{
-        name:'Luelle', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/Luelle.png'},{
-        name:'Rairyuu Halloween', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/Rairyuu Halloween.png'}
-      ]
-      var unitesMREarth=[{
-        name:'Dorando', element:'earth', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Dorando.png'},{
-        name:'éthéa', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/éthéa.png'},{
-        name:'Liviale', element:'earth', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Liviale.png'},{
-        name:'Lorenzo', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Lorenzo.png'},{
-        name:'Mont Leonis', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Mont Leonis.png'},{
-        name:'Mustadio', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Mustadio.png'}
-      ]
+    const [unitesEarthUR, setUnitesEarthUR] = useState([]);
+    useEffect(() =>{
+        test()
+    }, [])
+
+    const [unitesEarthMR, setUnitesEarthMR] = useState([]);
+    useEffect(() =>{
+        test2()
+    }, [])
+    
+    //   var unitesMREarth=[{
+    //     name:'Dorando', element:'earth', sniv:'/niv:', niv:99, image:'/images/Unite/MR/Dorando.png'},{
+    //     name:'éthéa', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/éthéa.png'},{
+    //     name:'Liviale', element:'earth', sniv:'/niv:', niv:120, image:'/images/Unite/MR/Liviale.png'},{
+    //     name:'Lorenzo', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Lorenzo.png'},{
+    //     name:'Mont Leonis', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Mont Leonis.png'},{
+    //     name:'Mustadio', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/MR/Mustadio.png'}
+    //   ]
+
       var unitesSREarth=[{
         name:'Murmure', element:'earth', sniv:'/niv:', niv:99, image:'/images/Unite/SR/Murmure.png'},{
         name:'Beilo', element:'earth', sniv:'/niv:', niv:0, image:'/images/Unite/SR/Beilo.png'}
@@ -51,6 +57,7 @@ export default function Home() {
         name:'Golem', elem:'earth', image:'/images/Chimère/Golem.png'},{
         name:'Titan', elem:'earth', image:'/images/Chimère/Titan.png'}
         ]
+
         var chimereMREarth=[{
         name:'Otyugh', elem:'earth', image:'/images/Chimère/Otyugh.png'}
         ]
@@ -58,9 +65,17 @@ export default function Home() {
       var chimereSREarth=[{
         name:'Pampa', elem:'earth', image:'/images/Chimère/Pampa.png'}
         ]
+
+    const test = async () => {
+        let response = await axios.get('http://localhost:8080/api/Unites/Earth/UR');
+        setUnitesEarthUR(response.data);
+    }
+
+    const test2 = async () => {
+        let response = await axios.get('http://localhost:8080/api/Unites/Earth/MR');
+        setUnitesEarthMR(response.data);
+    }
     
-
-
       return (
 
         <div className={styles.container}>
@@ -79,7 +94,7 @@ export default function Home() {
             <h5>Unités UR</h5>
                 
                 <div className={styles.elemEarthContainer}>
-                {unitesUREarth.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {unitesEarthUR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision UR</h5>
                 <div className={styles.AV2}>
@@ -92,7 +107,7 @@ export default function Home() {
             <h4>Earth MR</h4>
             <h5>Unités MR</h5>
                 <div className={styles.elemEarthContainer}>
-                {unitesMREarth.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
+                {unitesEarthMR.map((unite, index) => (<Unite name={unite.name} element={unite.element} sniv={unite.sniv} niv={unite.niv} key={index} image={unite.image}/>))}
                 </div>
             <h5>Atout vision MR</h5>
                 <div className={styles.AV2}>

@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -15,12 +14,15 @@ export default function Home() {
 var bookMR=[{
     name:'Encyclopédie lunaire', image:'/images/Equipement/Arme/Book/Encyclopédie lunaire.png'
 }]
+
 var bookSR=[{
     name:'Guide du monstre', image:'/images/Equipement/Arme/Book/Guide du monstre.png'
 }]
+
 var bookR=[{
     name:'Manuel de magie', image:'/images/Equipement/Arme/Book/Manuel de magie.png'
 }]
+
 var bookN=[{
     name:'Traité militaire', image:'/images/Equipement/Arme/Book/Traité militaire.png'
 }]
@@ -35,7 +37,6 @@ var bookN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -66,11 +67,7 @@ var bookN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Book</h3>
             <h4>MR</h4>
@@ -91,7 +88,6 @@ var bookN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

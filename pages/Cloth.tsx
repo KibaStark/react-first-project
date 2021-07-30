@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -30,20 +29,24 @@ var ClothUR=[{
     name:'Veste de larriveiste', image:'/images/Equipement/Armor/Cloth/Veste de larriviste.png'},{
     name:'Veste rouge', image:'/images/Equipement/Armor/Cloth/Veste rouge.png'
 }]
+
 var ClothMR=[{
     name:'Fides Lacerna', image:'/images/Equipement/Armor/Cloth/Fides Lacerna.png'},{
     name:'Manteau perspicace', image:'/images/Equipement/Armor/Cloth/Manteau perspicace.png'}
     
 ]
+
 var ClothSR=[{
     name:'Cape lunaire', image:'/images/Equipement/Armor/Cloth/Cape lunaire.png'},{
     name:'Châle du chercheur', image:'/images/Equipement/Armor/Cloth/Châle du chercheur.png'},{
     name:'Châle enneigé', image:'/images/Equipement/Armor/Cloth/Châle enneigé.png'},{
     name:'Robe de lalliance', image:'/images/Equipement/Armor/Cloth/Robe de lalliance.png'
 }]
+
 var ClothR=[{
     name:'Robe dérudit', image:'/images/Equipement/Armor/Cloth/Robe dérudit.png'
 }]
+
 var ClothN=[{
     name:'Chemise en cuir', image:'/images/Equipement/Armor/Cloth/Chemise en cuir.png'
 }]
@@ -58,7 +61,6 @@ var ClothN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -89,11 +91,7 @@ var ClothN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Cloth</h3>
             <h4>UR</h4>
@@ -119,7 +117,6 @@ var ClothN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

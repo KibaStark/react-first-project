@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -15,19 +14,22 @@ export default function Home() {
 var GunUR=[{
     name:'Mousquet dArcadia', image:'/images/Equipement/Arme/Gun/Mousquet dArcadia.png'
 }]
+
 var GunMR=[{
     name:'Besrudio', image:'/images/Equipement/Arme/Gun/Besrudio.png'},{
     name:'Lune nouvelle', image:'/images/Equipement/Arme/Gun/Lune nouvelle.png'},{
     name:'Mousquet sur mesure', image:'/images/Equipement/Arme/Gun/Mousquet sur mesure.png'},{
     name:'Ras Algethi', image:'/images/Equipement/Arme/Gun/Ras Algethi.png'}
-    
 ]
+
 var GunSR=[{
     name:'Véga', image:'/images/Equipement/Arme/Gun/Véga.png'
 }]
+
 var GunR=[{
     name:'Capella', image:'/images/Equipement/Arme/Gun/Capella.png'
 }]
+
 var GunN=[{
     name:'Altaïr', image:'/images/Equipement/Arme/Gun/Altaïr.png'
 }]
@@ -42,7 +44,6 @@ var GunN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -73,11 +74,7 @@ var GunN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Gun</h3>
             <h4>UR</h4>
@@ -103,7 +100,6 @@ var GunN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

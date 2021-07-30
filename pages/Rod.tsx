@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -15,6 +14,7 @@ export default function Home() {
 var RodUR=[{
     name:'Bâton de sage', image:'/images/Equipement/Arme/Rod/Bâton de sage.png'
 }]
+
 var RodMR=[{
     name:'Bâton de cyprès', image:'/images/Equipement/Arme/Rod/Bâton de cyprès.png'},{
     name:'Bâton de magilithe', image:'/images/Equipement/Arme/Rod/Bâton de magilithe.png'},{
@@ -27,14 +27,16 @@ var RodMR=[{
     name:'Prunus Lamina', image:'/images/Equipement/Arme/Rod/Bâton inguz.png'},{
     name:'Quêteur de la nuit', image:'/images/Equipement/Arme/Rod/Quêteur de la nuit.png'},{
     name:'Sceptre de platine', image:'/images/Equipement/Arme/Rod/Sceptre de platine.png'}
-    
 ]
+
 var RodSR=[{
     name:'Bâton de soin', image:'/images/Equipement/Arme/Rod/Bâton de soin.png'
 }]
+
 var RodR=[{
     name:'Sceptre en fer', image:'/images/Equipement/Arme/Rod/Sceptre en fer.png'
 }]
+
 var RodN=[{
     name:'Bâton', image:'/images/Equipement/Arme/Rod/Bâton.png'},{
     name:'Sceptre', image:'/images/Equipement/Arme/Rod/Sceptre.png'
@@ -50,7 +52,6 @@ var RodN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -81,11 +82,7 @@ var RodN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Rod</h3>
             <h4>UR</h4>
@@ -111,7 +108,6 @@ var RodN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

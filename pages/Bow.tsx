@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -15,6 +14,7 @@ export default function Home() {
 var BowUR=[{
     name:'Arc elfique', image:'/images/Equipement/Arme/Bow/Arc elfique.png'}
 ]
+
 var BowMR=[{
     name:'Arc assassin sans coeur', image:'/images/Equipement/Arme/Bow/Arc assassin sans coeur.png'},{
     name:'Arc de platine', image:'/images/Equipement/Arme/Bow/Arc de platine.png'},{
@@ -22,14 +22,16 @@ var BowMR=[{
     name:'Arc runique', image:'/images/Equipement/Arme/Bow/Arc runique.png'},{
     name:'Arc tueur', image:'/images/Equipement/Arme/Bow/Arc tueur.png'},{
     name:'Réincarnation', image:'/images/Equipement/Arme/Bow/Réincarnation.png'}
-    
 ]
+
 var BowSR=[{
     name:'Grand arc', image:'/images/Equipement/Arme/Bow/Grand arc.png'}
   ]
+  
 var BowR=[{
     name:'Arc long', image:'/images/Equipement/Arme/Bow/Arc long.png'
 }]
+
 var BowN=[{
     name:'Arc court', image:'/images/Equipement/Arme/Bow/Arc court.png'
 }]
@@ -44,7 +46,6 @@ var BowN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -75,11 +76,7 @@ var BowN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Bow</h3>
             <h4>UR</h4>
@@ -105,7 +102,6 @@ var BowN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

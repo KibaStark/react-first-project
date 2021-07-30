@@ -5,8 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
-
 export default function Home() {
     const router = useRouter()
 const OnElementClick = (route:string) => {
@@ -25,16 +23,18 @@ var ArmorUR=[{
     name:'Brigandine', image:'/images/Equipement/Armor/Armor/Brigandine.png'},{
     name:'Veste dendurance', image:'/images/Equipement/Armor/Armor/Veste dendurance.png'
 }]
+
 var ArmorMR=[{
     name:'Armure dor', image:'/images/Equipement/Armor/Armor/Armure dor.png'},{
     name:'Armure de lumière', image:'/images/Equipement/Armor/Armor/Armure de lumière.png'},{
     name:'épaulière de paladin', image:'/images/Equipement/Armor/Armor/épaulière de paladin.png'}
-    
 ]
+
 var ArmorSR=[{
     name:'Armure en mithril', image:'/images/Equipement/Armor/Armor/Armure en mithril.png'},{
     name:'Armure forestière', image:'/images/Equipement/Armor/Armor/Armure forestière.png'
 }]
+
 var ArmorR=[{
     name:'Plates en fer', image:'/images/Equipement/Armor/Armor/Plates en fer.png'
 }]
@@ -82,11 +82,7 @@ var ArmorN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Armor</h3>
             <h4>UR</h4>
@@ -112,7 +108,6 @@ var ArmorN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

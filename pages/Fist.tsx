@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -17,12 +16,15 @@ var FistMR=[{
     name:'Poings brise-glace', image:'/images/Equipement/Arme/Fist/Poings brise-glace.png'},{
     name:'Poings de kaiser', image:'/images/Equipement/Arme/Fist/Poings de kaiser.png'}
 ]
+
 var FistSR=[{
     name:'Griffes en mithril', image:'/images/Equipement/Arme/Fist/Griffes en mithril.png'
 }]
+
 var FistR=[{
     name:'Poings en métal', image:'/images/Equipement/Arme/Fist/Poings en métal.png'
 }]
+
 var FistN=[{
     name:'Poings en bronze', image:'/images/Equipement/Arme/Fist/Poings en bronze.png'
 }]
@@ -37,7 +39,6 @@ var FistN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -68,11 +69,7 @@ var FistN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Fist</h3>
             <h4>MR</h4>
@@ -93,7 +90,6 @@ var FistN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -16,12 +15,15 @@ var axeMR=[{
     name:'Hache en or', image:'/images/Equipement/Arme/Axe/Hache en or.png'},{
     name:'Hache massacrante', image:'/images/Equipement/Arme/Axe/Hache massacrante.png'
 }]
+
 var axeSR=[{
     name:'Hache en mithril', image:'/images/Equipement/Arme/Axe/Hache en mithril.png'
 }]
+
 var axeR=[{
     name:'Tue-ogres', image:'/images/Equipement/Arme/Axe/Tue-ogres.png'
 }]
+
 var axeN=[{
     name:'Hache de combats', image:'/images/Equipement/Arme/Axe/Hache de combats.png'
 }]
@@ -36,8 +38,6 @@ var axeN=[{
 
       <Header/>
       <SideBar/>
-
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -68,7 +68,6 @@ var axeN=[{
 
         </div>
 
-
         <div className={styles.equipementContainer}>
             <h3>Axe</h3>
             <h4>MR</h4>
@@ -88,9 +87,7 @@ var axeN=[{
                 {axeN.map((equipement, index) => (<Equipement name={equipement.name} key={index} image={equipement.image}/>))}
             </div>
 
-            
         </div>
-      
       
       <footer className={styles.footer}>
 

@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -15,12 +14,15 @@ export default function Home() {
 var GloveMR=[{
     name:'Gants sombres', image:'/images/Equipement/Arme/Glove/Gants sombres.png'
 }]
+
 var GloveSR=[{
     name:'Gants de combat', image:'/images/Equipement/Arme/Glove/Gants de combat.png'
 }]
+
 var GloveR=[{
     name:'Gants de puissance', image:'/images/Equipement/Arme/Glove/Gants de puissance.png'
 }]
+
 var GloveN=[{
     name:'Gants en cuir', image:'/images/Equipement/Arme/Glove/Gants en cuir.png'
 }]
@@ -35,7 +37,6 @@ var GloveN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -66,11 +67,7 @@ var GloveN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Glove</h3>
             <h4>MR</h4>
@@ -91,7 +88,6 @@ var GloveN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

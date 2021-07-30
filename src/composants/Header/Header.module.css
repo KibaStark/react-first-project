@@ -1,28 +1,34 @@
 .header {
     z-index: 1;
-    background-color: rgb(104, 79, 41);
+    background-color: rgb(104, 103, 103);
     position: fixed;
     width: 100%;
     height: 75px;
-    border-bottom: 2px solid #cf0303;
     text-align: center;
+    display: flex;
+    justify-content:center;
   }
   .AedesLumina {
     font-size: 30px;
     letter-spacing: 5px;
   }
   .ButtonEloria {
-    width: 15%;
+    width: 30%;
     height: 40px;
     background-color: rgb(255, 255, 255);
   }
   .ButtonAirole {
-    width: 15%;
+    width: 30%;
     height: 40px;
     background-color: rgb(255, 255, 255);
   }
   .ButtonIvalice {
-    width: 15%;
+    width: 30%;
     height: 40px;
+    background-color: rgb(255, 255, 255);
+  }
+  .deco{
+    width: 50%;
+    height: 30px;
     background-color: rgb(255, 255, 255);
   }

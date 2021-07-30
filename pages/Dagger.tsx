@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
   const router = useRouter()
   const OnElementClick = (route:string) => {
@@ -17,12 +16,15 @@ var DaggerMR=[{
     name:'Dague sanglante', image:'/images/Equipement/Arme/Dagger/Dague sanglante.png'},{
     name:'Main gauche', image:'/images/Equipement/Arme/Dagger/Main gauche.png'}
 ]
+
 var DaggerSR=[{
     name:'Dague en mithril', image:'/images/Equipement/Arme/Dagger/Dague en mithril.png'
 }]
+
 var DaggerR=[{
     name:'Dague', image:'/images/Equipement/Arme/Dagger/Dague.png'
 }]
+
 var DaggerN=[{
     name:'Couteau en bronze', image:'/images/Equipement/Arme/Dagger/Couteau en bronze.png'
 }]
@@ -37,7 +39,6 @@ var DaggerN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -68,11 +69,7 @@ var DaggerN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Dagger</h3>
             <h4>MR</h4>
@@ -93,7 +90,6 @@ var DaggerN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -15,19 +14,22 @@ export default function Home() {
 var GreatSwordUR=[{
     name:'Sabre carmin', image:'/images/Equipement/Arme/GreatSword/Sabre carmin.png'
 }]
+
 var GreatSwordMR=[{
     name:'épée runique', image:'/images/Equipement/Arme/GreatSword/épée runique.png'},{
     name:'Fend-les-cieux', image:'/images/Equipement/Arme/GreatSword/Fend-les-cieux.png'},{
     name:'Kagero', image:'/images/Equipement/Arme/GreatSword/Kagero.png'},{
     name:'Lame en or', image:'/images/Equipement/Arme/GreatSword/Lame en or.png'}
-    
 ]
+
 var GreatSwordSR=[{
     name:'Sabre en mithril', image:'/images/Equipement/Arme/GreatSword/Sabre en mithril.png'
 }]
+
 var GreatSwordR=[{
     name:'Claymore', image:'/images/Equipement/Arme/GreatSword/Claymore.png'
 }]
+
 var GreatSwordN=[{
     name:'Spathe', image:'/images/Equipement/Arme/GreatSword/Spathe.png'
 }]
@@ -42,7 +44,6 @@ var GreatSwordN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -73,11 +74,7 @@ var GreatSwordN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>GreatSword</h3>
             <h4>UR</h4>
@@ -103,7 +100,6 @@ var GreatSwordN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

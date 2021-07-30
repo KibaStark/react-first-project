@@ -1,72 +1,71 @@
 .MenuContainer{
     z-index: 2;
     position: fixed;
-    background-color: rgb(104, 79, 41);
+    background-color: rgb(104, 103, 103);
     right: 0px;
     width: 100px;
     height: 100%;
-    border: 2px solid red;
     text-align: center;
   }
   .ButtonMain {
-      width: 100%;
-      height: 7%;
+      width: 90px;
+      height: 50px;
       background-color: rgb(255, 255, 255);
   }
   .ButtonChimère {
-      width: 100%;
-      height: 7%;
+      width: 90px;
+      height: 50px;
       background-color: rgb(255, 255, 255);
   }
   .ButtonAV {
-    width: 100%;
-    height: 7%;
+    width: 90px;
+    height: 50px;
     background-color: rgb(255, 255, 255);
   }
   
   .ButtonUnite {
-    width: 100%;
-    height: 7%;
+    width: 90px;
+    height: 50px;
     background-color: rgb(255, 255, 255);
   }
   .ButtonUniteFire {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(211, 0, 0);
   }
   .ButtonUniteIce {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(157, 240, 255);
   }
   .ButtonUniteWind {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(8, 168, 16);
   }
   .ButtonUniteEarth {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(230, 140, 6);
   }
   .ButtonUniteLightning {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(235, 219, 74);
   }
   .ButtonUniteWater {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(4, 94, 211);
   }
   .ButtonUniteLight {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(199, 194, 185);
   }
   .ButtonUniteDark {
-    width: 75%;
-    height: 7%;
+    width: 65px;
+    height: 60px;
     background-color: rgb(116, 28, 89);
   }
 

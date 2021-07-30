@@ -15,19 +15,22 @@ export default function Home() {
 var KatanaUR=[{
     name:'éclair pourpre', image:'/images/Equipement/Arme/Katana/éclair pourpre.png'
 }]
+
 var KatanaMR=[{
     name:'Contrat vertueux', image:'/images/Equipement/Arme/Katana/Contrat vertueux.png'},{
     name:'Katana de foudre', image:'/images/Equipement/Arme/Katana/Katana de foudre.png'},{
     name:'Odachi de la destruction', image:'/images/Equipement/Arme/Katana/Odachi de la destruction.png'},{
     name:'Osafune', image:'/images/Equipement/Arme/Katana/Osafune.png'}
-    
 ]
+
 var KatanaSR=[{
     name:'Kiku-ichimonji', image:'/images/Equipement/Arme/Katana/Kiku-ichimonji.png'
 }]
+
 var KatanaR=[{
     name:'Kotetsu', image:'/images/Equipement/Arme/Katana/Kotetsu.png'
 }]
+
 var KatanaN=[{
     name:'Ashura', image:'/images/Equipement/Arme/Katana/Ashura.png'
 }]
@@ -42,7 +45,6 @@ var KatanaN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -73,11 +75,7 @@ var KatanaN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Katana</h3>
             <h4>UR</h4>
@@ -103,7 +101,6 @@ var KatanaN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 

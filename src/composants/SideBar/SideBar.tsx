@@ -1,5 +1,5 @@
 import {Element} from '../Unite/Element'
-import {FC} from "react"
+import {FC, useState} from "react"
 import styles from './SideBar.module.css'
 import { useRouter } from 'next/router'
 
@@ -8,13 +8,14 @@ interface Props {}
 
 export const SideBar:FC<Props> = ({}) => {
     const router = useRouter()
-    const OnElementClick = (route) => {
+    const OnElementClick = (route: string) => {
         router.push(`/${route}`)
       }
   return ( <div>
     <div className={styles.MenuContainer}>
 
-    <button className={styles.ButtonMain} onClick={() => {OnElementClick('')}}>Main</button>
+
+    <button className={styles.ButtonMain} onClick={() => {OnElementClick('Main')}}>Main</button>
 
     <button className={styles.ButtonMain} onClick={() => {OnElementClick('Equipement')}}>Equipement</button>
 

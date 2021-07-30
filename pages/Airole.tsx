@@ -4,18 +4,20 @@ import {Member} from '../src/composants/Member/Member'
 import {Header} from '../src/composants/Header/Header'
 import {SideBar} from '../src/composants/SideBar/SideBar'
 
-
 export default function Home() {
     
     var MemberAiroleChef=[{
         name:'Barret', image:'/images/Membre/Barret.jpg'}
       ]
+
       var MemberAiroleBrasDroit=[{
         name:'HAM3NK', image:'/images/Membre/Ham3nk.jpg'}
       ]
+
       var MemberAiroleCapitaine=[{
         name:'Gnano', image:'/images/unnamed.jpg'}
       ]
+
       var MemberAirole=[{
         name:'Flothia', image:'/images/unnamed.jpg'},{
         name:'Onlzebu', image:'/images/unnamed.jpg'},{
@@ -32,6 +34,7 @@ export default function Home() {
         name:'Bighood', image:'/images/unnamed.jpg'},{
         name:'Caim', image:'/images/unnamed.jpg'}
       ]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -42,7 +45,6 @@ export default function Home() {
 
       <Header/>
       <SideBar/>
-
 
       <div className={styles.guildeAiroleContainer}>
         <h2>Airole</h2>

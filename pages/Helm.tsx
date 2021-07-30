@@ -5,7 +5,6 @@ import {SideBar} from '../src/composants/SideBar/SideBar'
 import {Equipement} from '../src/composants/Equipement/Equipement'
 import { useRouter } from 'next/router'
 
-
 export default function Home() {
     const router = useRouter()
     const OnElementClick = (route:string) => {
@@ -20,15 +19,19 @@ var HelmUR=[{
     name:'Casque de platine', image:'/images/Equipement/Armor/Helm/Casque de platine.png'},{
     name:'Casque des jurés', image:'/images/Equipement/Armor/Helm/Casque des jurés.png'
 }]
+
 var HelmMR=[{
     name:'Casque en or', image:'/images/Equipement/Armor/Helm/Casque en or.png'}
 ]
+
 var HelmSR=[{
     name:'Casque en mithril', image:'/images/Equipement/Armor/Helm/Casque en mithril.png'
 }]
+
 var HelmR=[{
     name:'Casque en fer', image:'/images/Equipement/Armor/Helm/Casque en fer.png'
 }]
+
 var HelmN=[{
     name:'Casque en bronze', image:'/images/Equipement/Armor/Helm/Casque en bronze.png'
 }]
@@ -43,7 +46,6 @@ var HelmN=[{
 
       <Header/>
       <SideBar/>
-
 
         <div className={styles.equipementContainer}>
             <h3>Arme</h3>
@@ -74,11 +76,7 @@ var HelmN=[{
 
         </div>
 
-
-
-
         <div className={styles.equipementContainer}>
-
 
             <h3>Helm</h3>
             <h4>UR</h4>
@@ -104,7 +102,6 @@ var HelmN=[{
             </div>
             
         </div>
-      
       
       <footer className={styles.footer}>
 
